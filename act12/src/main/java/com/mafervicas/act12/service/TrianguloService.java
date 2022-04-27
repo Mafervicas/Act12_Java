@@ -9,7 +9,6 @@ import com.mafervicas.act12.entity.Triangulo;
 import com.mafervicas.act12.repository.TrianguloRepository;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,8 +33,20 @@ public class TrianguloService {
         return list;
     }
     
-    public void guardarTriangulo(Triangulo triangulo){
-        trianguloRepository.save(triangulo);  
-    }
+    public List<Triangulo> listAll() {
+		return trianguloRepository.findAll();
+	}
+	
+	public void save(Triangulo triangulo) {
+		trianguloRepository.save(triangulo);
+	}
+	
+	public Triangulo get(Integer id) {
+		return trianguloRepository.findById(id).get();
+	}
+	
+	public void delete(Integer id) {
+		trianguloRepository.deleteById(id);
+	}
     
 }

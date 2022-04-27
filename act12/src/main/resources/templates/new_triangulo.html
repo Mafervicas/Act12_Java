@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Nuevo</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>Crearemos un nuevo triángulo</div>
+        <form action="#" th:action="@{/save}" th:object="${triangulo}"
+                  method="post">
+
+                <table border="0" cellpadding="10">
+                    <tr>
+                        <td>Base:</td>
+                        <td><input type="text" th:field="*{base}" name="base" /></td>
+                    </tr>
+                    <tr>
+                        <td>Altura:</td>
+                        <td><input type="text" th:field="*{altura}" name="altura" /></td>
+                    </tr>							
+                    <tr>
+                        <td colspan="2"><button type="submit">Save</button> </td>
+                    </tr>
+                </table>
+            </form>
+    </body>
+</html>
